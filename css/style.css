@@ -9,6 +9,12 @@ body {
     margin: 0;
     background-color: var(--bg-gray);
     color: var(--dark-text);
+    
+}
+
+html {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Navigation */
@@ -111,9 +117,10 @@ section {
 .msg-popup {
     /* Critical placement properties */
     position: fixed;
-    bottom: 30px;
+    bottom: calc(30px + env(safe-area-inset-bottom));
     right: 30px;
     z-index: 1000; /* Ensures it stays above images and text */
+    box-sizing: border-box;
 
     /* Styling to match your theme */
     background-color: var(--primary-colour); /* Your signature purple */
