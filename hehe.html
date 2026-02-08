@@ -5,8 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shhhh</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/hehe.css">
+    
 </head>
 <body>
-    
+    <div class="envelope">
+        <div class="cover">
+            <div class="bottom"> </div>
+            <div class="side">
+            <div class="left"></div>
+            <div class="right"></div>
+            </div>
+            <div class="top">
+            <div class="top-cover"></div>
+            </div>
+        </div>
+        <div class="paper">
+            <img src="img/monkey.jpg" id="openModal" style="width: auto; height: 80%; display: flex; margin: auto; justify-content: center; align-items: center; ">
+            <div class="message" id="openModal"> click me
+            </div>
+            <div class="close"> <i class="fa fa-times">&times;</i></div>
+        </div>
+        <div class="shadow"></div>
+    </div>
+
+
+    <div class="modal" id="modal">
+        <div class="letter">
+
+            <p class="fade" data-delay="0">Hi XuanXuan!</p>
+            <p class="fade" data-delay="2000">Soooo we'll be meeting on 14th Feb but I wanna make this a little special...</p>
+            <p class="fade" data-delay="6000">And I've an important question........</p>
+            <p class="fade" data-delay="10000">*deeeeeeep breath*</p>
+            <div class="fade" id="question" data-delay="15000">
+                <img src="img/shy.jpg" style="width: 40%; height:auto;">
+                <h3>May I Be Your Valentine?</h3>
+            </div>
+            
+            
+            <div class="buttons fade" data-delay="16000">
+                <button id="yesBtn">Yes!! 😁</button>
+                <button id="noBtn">No. 😔</button>
+            </div>
+
+            <div id="response"></div>
+
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.4.1/gsap.min.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.0/anime.min.js'></script>
+<script src="https://cdn.jsdelivr.net/npm/@tsparticles/confetti@3.0.3/tsparticles.confetti.bundle.min.js"></script>
+<script src="hehe.js"></script>
 </body>

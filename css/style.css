@@ -128,15 +128,29 @@ section {
     align-items: center;
     gap: 10px;
     transition: transform 0.2s, background-color 0.2s;
+    animation: pulse-glow 2s infinite;
 }
 
-.msg-popup:hover {
-    background-color: #101447; /* Slightly darker purple on hover */
-    transform: scale(1.05); /* Subtle pop effect */
-}
+/* .msg-popup:hover {
+    background-color: #101447; /* Slightly darker purple on hover 
+    transform: scale(1.05); /* Subtle pop effect 
+} */
 
 .msg-popup .icon {
     font-size: 1.2rem;
+}
+
+@keyframes pulse-glow {
+    0% {
+        box-shadow: 0 0 0 0 rgba(243, 159, 103, 0.877);
+    }
+    70% {
+        /* The shadow spreads out to 15px */
+        box-shadow: 0 0 0 20px rgba(246, 166, 92, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(246, 179, 92, 0);
+    }
 }
 
 .modal-overlay {

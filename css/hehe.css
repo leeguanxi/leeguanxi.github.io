@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Delius&display=swap');
+
+/*----Variables ----*/
+/*----Abstract Classes ----*/
+.envelope .shadow, .envelope .paper .message, .envelope .paper, .envelope {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/*----Components ----*/
+.envelope {
+  background: #d8a2c4;
+  width: 150px;
+  height: 90px;
+}
+.envelope .cover {
+  position: relative;
+}
+.envelope .cover .top,
+.envelope .cover .side,
+.envelope .cover .bottom {
+  position: absolute;
+  width: 150px;
+  z-index: 2;
+}
+.envelope .cover .top {
+  cursor: pointer;
+  filter: drop-shadow(0px 2px 3px rgba(50, 0, 31, 0.1));
+}
+.envelope .cover .top .top-cover {
+  height: calc(90px - 30px);
+  background: #f5b2d1;
+  -webkit-clip-path: polygon(0 0, 50% 100%, 100% 0);
+  clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+.envelope .cover .side {
+  filter: drop-shadow(0px -1px 3px rgba(50, 0, 50, 0.2));
+  height: 90px;
+}
+.envelope .cover .side .left,
+.envelope .cover .side .right {
+  position: absolute;
+  background: #f8c0e1;
+  width: calc(150px / 2);
+  height: 90px;
+}
+.envelope .cover .side .left {
+  left: 0;
+  -webkit-clip-path: polygon(0 0, 0 100%, 100% 50%);
+  clip-path: polygon(0 0, 0 100%, 100% 50%);
+}
+.envelope .cover .side .right {
+  right: 0;
+  -webkit-clip-path: polygon(0 50%, 100% 0, 100% 100%);
+  clip-path: polygon(0 50%, 100% 0, 100% 100%);
+}
+.envelope .cover .bottom {
+  top: calc(90px / 2);
+  height: calc(90px / 2);
+  background: #f1bee0;
+  -webkit-clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+  clip-path: polygon(0 100%, 50% 0%, 100% 100%);
+}
+.envelope .paper {
+  position: relative;
+  width: 120px;
+  height: 90px;
+  background: #e7e2d5;
+  color: #9c708b;
+  border-radius: 3px;
+  box-shadow: 0 0 2px rgba(50, 0, 50, 0.3);
+  z-index: 1;
+}
+.envelope .paper .message {
+  font-family: "Delius", cursive;
+  font-size: 12px;
+  position: absolute;
+  top: 90%;
+  text-align:center;
+}
+.envelope .paper .close {
+  cursor: pointer;
+  position: absolute;
+  font-size: 8px;
+  top: 10px;
+  right: 10px;
+}
+.envelope .shadow {
+  height: 30px;
+  width: 160px;
+  top: 250%;
+  border-radius: 50%;
+  background-image: radial-gradient(rgba(0, 0, 50, 0.3), rgba(250, 250, 250, 0));
+  filter: blur(5px);
+}
+
+
+
+/* Modal */
+ .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .letter {
+      background: #fff;
+      width: 60vh;
+      height: auto;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: center;
+      position: relative;
+      animation: pop 0.4s ease;
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0.7);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+/* Letter */
+
+.letter p {
+  font-family: "Delius", cursive;
+}
+
+.buttons {
+      margin-top: 25px;
+      position: relative;
+      height: 60px;
+    }
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+  position: absolute;
+}
+
+#yesBtn {
+  left: 60px;
+  background: #e91e63;
+  color: white;
+}
+
+#noBtn {
+  right: 60px;
+  background: #ccc;
+  transition: all 0.15s ease;
+}
+
+/* Valentine Msg */
+.valentineMsg{
+  font-family: "Delius", cursive;
+}
+
+.actions {
+    position: relative; /* This keeps the button inside the actions area initially */
+    height: 100px; /* Give it some room to move */
+    margin-top: 20px;
+}
+
+#runAwayBtn {
+    position: absolute;
+    transition: all 0.2s ease; /* Makes the movement smooth */
+    z-index: 10;
+}
+
+.fade {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  margin: 12px 0;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.question {
+  font-weight: bold;
+  color: #e91e63;
+  margin-top: 18px;
+}
